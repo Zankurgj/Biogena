@@ -1,0 +1,49 @@
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+
+// USER VARIABLES SECTION
+
+$fontsize: 16px; // Body Font Size
+$textcolor: #333; // Text Color
+$mainfamily: Din Next, Arial, sans-serif; // Main Font Family
+$mobile-bp: 768px;
+
+// FONTS LOAD SECTION
+
+@mixin font($f-name, $f-style, $f-weight, $f-url) {
+  @font-face {
+    font-family: $f-name;
+    font-style: $f-style;
+    font-weight: $f-weight;
+    src: url($f-url + '.woff2') format('woff2');
+    src: url($f-url + '.woff') format('woff');
+  }
+}
+
+body {
+  font-size: $fontsize;
+  font-weight: 300;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.4;
+  font-family: $mainfamily;
+  overflow-x: hidden;
+  color: $textcolor;
+  -webkit-font-smoothing: antialiased;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@include font('Din Next', normal, 300, '../fonts/DINPro-Light');
+@include font('Din Next', normal, 400, '../fonts/DINPro');
+@include font('Din Next', normal, 500, '../fonts/DINPro-Medium');
